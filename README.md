@@ -10,7 +10,7 @@ To import this module:
 
 1) Require the module.
 ```javascript
-var GlassFrog = require('glassfrog');
+var GlassFrog = require('glassfrog-js');
 ```
 
 2) Pass your API Key to the function that is imported.
