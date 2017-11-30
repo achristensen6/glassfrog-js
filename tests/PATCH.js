@@ -88,12 +88,12 @@ describe('PATCH', function() {
             describe('withID', function() {
               it('Should return 204 No Content', function(done) {
                 gf.patch().roles().withID(testRoleID).add().to().people().withID(testPersonID).spread(function (response, data) {
-                  if (response.headers.status === '204 No Content') {
+                  if (response.statusCode === 204) {
                     done();
-                  } else if (response.headers.status === '403 Forbidden') {
+                  } else if (response.statusCode === 403) {
                     done(new Error('Your API KEY must belong to an admin.'));
                   } else {
-                    done(new Error('Not Ok. ' + response.headers.status));
+                    done(new Error('Not Ok. ' + response.statusCode));
                   }
                 }).catch(function (error) {
                   if (error) throw error;
@@ -109,12 +109,12 @@ describe('PATCH', function() {
             describe('withID', function() {
               it('Should return 204 No Content', function(done) {
                 gf.patch().roles().withID(testRoleID).remove().from().people().withID(testPersonID).spread(function (response, data) {
-                  if (response.headers.status === '204 No Content') {
+                  if (response.statusCode === 204) {
                     done();
-                  } else if (response.headers.status === '403 Forbidden') {
+                  } else if (response.statusCode === 403) {
                     done(new Error('Your API KEY must belong to an admin.'));
                   } else {
-                    done(new Error('Not Ok. ' + response.headers.status));
+                    done(new Error('Not Ok. ' + response.statusCode));
                   }
                 }).catch(function (error) {
                   if (error) throw error;
@@ -131,12 +131,12 @@ describe('PATCH', function() {
       describe('change', function() {
         it('Should return 204 No Content', function(done) {
           gf.patch().people().withID(testPersonID).change(PERSON_CHANGE).spread(function (response, data) {
-            if (response.headers.status === '204 No Content') {
+            if (response.statusCode === 204) {
               done();
-            } else if (response.headers.status === '403 Forbidden') {
+            } else if (response.statusCode === 403) {
               done(new Error('Your API KEY must belong to an admin.'));
             } else {
-              done(new Error('Not Ok. ' + response.headers.status));
+              done(new Error('Not Ok. ' + response.statusCode));
             }
           }).catch(function (error) {
             if (error) throw error;
@@ -150,12 +150,12 @@ describe('PATCH', function() {
       describe('change', function() {
         it('Should return 204 No Content', function(done) {
           gf.patch().projects().withID(testProjectID).change(PROJECT_CHANGE).spread(function (response, data) {
-            if (response.headers.status === '204 No Content') {
+            if (response.statusCode === 204) {
               done();
-            } else if (response.headers.status === '403 Forbidden') {
+            } else if (response.statusCode === 403) {
               done(new Error('Your API KEY must belong to an admin.'));
             } else {
-              done(new Error('Not Ok. ' + response.headers.status));
+              done(new Error('Not Ok. ' + response.statusCode));
             }
           }).catch(function (error) {
             if (error) throw error;
@@ -165,12 +165,12 @@ describe('PATCH', function() {
       describe('archive', function() {
         it('Should return 204 No Content', function(done) {
           gf.patch().projects().withID(testProjectID).archive().spread(function (response, data) {
-            if (response.headers.status === '204 No Content') {
+            if (response.statusCode === 204) {
               done();
-            } else if (response.headers.status === '403 Forbidden') {
+            } else if (response.statusCode === 403) {
               done(new Error('Your API KEY must belong to an admin.'));
             } else {
-              done(new Error('Not Ok. ' + response.headers.status));
+              done(new Error('Not Ok. ' + response.statusCode));
             }
           }).catch(function (error) {
             if (error) throw error;
@@ -184,12 +184,12 @@ describe('PATCH', function() {
       describe('change', function() {
         it('Should return 204 No Content', function(done) {
           gf.patch().metrics().withID(testMetricID).change(METRIC_CHANGE).spread(function (response, data) {
-            if (response.headers.status === '204 No Content') {
+            if (response.statusCode === 204) {
               done();
-            } else if (response.headers.status === '403 Forbidden') {
+            } else if (response.statusCode === 403) {
               done(new Error('Your API KEY must belong to an admin.'));
             } else {
-              done(new Error('Not Ok. ' + response.headers.status));
+              done(new Error('Not Ok. ' + response.statusCode));
             }
           }).catch(function (error) {
             if (error) throw error;
@@ -203,12 +203,12 @@ describe('PATCH', function() {
       describe('change', function() {
         it('Should return 204 No Content', function(done) {
           gf.patch().checklistItems().withID(testChecklistItemID).change(CHECKLIST_ITEM_CHANGE).spread(function (response, data) {
-            if (response.headers.status === '204 No Content') {
+            if (response.statusCode === 204) {
               done();
-            } else if (response.headers.status === '403 Forbidden') {
+            } else if (response.statusCode === 403) {
               done(new Error('Your API KEY must belong to an admin.'));
             } else {
-              done(new Error('Not Ok. ' + response.headers.status));
+              done(new Error('Not Ok. ' + response.statusCode));
             }
           }).catch(function (error) {
             if (error) throw error;

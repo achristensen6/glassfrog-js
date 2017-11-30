@@ -17,11 +17,11 @@ function testMethods(context, gf, timeout, cache) {
     describe('all', function() {
       it('Should return 200 OK', function(done) {
         gf.get(cache).circles().all().spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             circleID = data.circles[0].id;
             done();
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -31,10 +31,10 @@ function testMethods(context, gf, timeout, cache) {
     describe('withID', function() {
       it('Should return 200 OK', function(done) {
         gf.get(cache).circles().withID(circleID).spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             done();
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -46,11 +46,11 @@ function testMethods(context, gf, timeout, cache) {
     describe('all', function() {
       it('Should return 200 OK', function(done) {
         gf.get(cache).people().all().spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             personID = data.people[0].id;
             done();
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -60,10 +60,10 @@ function testMethods(context, gf, timeout, cache) {
     describe('withID', function() {
       it('Should return 200 OK', function(done) {
         gf.get(cache).people().withID(personID).spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             done();
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -75,10 +75,10 @@ function testMethods(context, gf, timeout, cache) {
         describe('withID', function() {
           it('Should return 200 OK', function(done) {
             gf.get(cache).people().within().circles().withID(circleID).spread(function (response, data) {
-              if (response.headers.status === '200 OK') {
+              if (response.statusCode === 200) {
                 done();
               } else {
-                done(new Error('Not Ok. ' + response.headers.status));
+                done(new Error('Not Ok. ' + response.statusCode));
               }
             }).catch(function (error) {
               if (error) throw error;
@@ -92,10 +92,10 @@ function testMethods(context, gf, timeout, cache) {
             describe(name, function () {
               it('Should return 200 OK', function(done) {
                 gf.get(cache).people().within().roles().withName(name).spread(function (response, data) {
-                  if (response.headers.status === '200 OK') {
+                  if (response.statusCode === 200) {
                     done();
                   } else {
-                    done(new Error('Not Ok. ' + response.headers.status));
+                    done(new Error('Not Ok. ' + response.statusCode));
                   }
                 }).catch(function (error) {
                   if (error) throw error;
@@ -111,11 +111,11 @@ function testMethods(context, gf, timeout, cache) {
     describe('all', function() {
       it('Should return 200 OK', function(done) {
         gf.get(cache).roles().all().spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             roleID = data.roles[0].id;
             done();
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -125,10 +125,10 @@ function testMethods(context, gf, timeout, cache) {
     describe('withID', function() {
       it('Should return 200 OK', function(done) {
         gf.get(cache).roles().withID(roleID).spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             done();
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -140,10 +140,10 @@ function testMethods(context, gf, timeout, cache) {
         describe('withID', function() {
           it('Should return 200 OK', function(done) {
             gf.get(cache).roles().within().circles().withID(circleID).spread(function (response, data) {
-              if (response.headers.status === '200 OK') {
+              if (response.statusCode === 200) {
                 done();
               } else {
-                done(new Error('Not Ok. ' + response.headers.status));
+                done(new Error('Not Ok. ' + response.statusCode));
               }
             }).catch(function (error) {
               if (error) throw error;
@@ -155,10 +155,10 @@ function testMethods(context, gf, timeout, cache) {
         describe('withID', function() {
           it('Should return 200 OK', function(done) {
             gf.get(cache).roles().within().people().withID(personID).spread(function (response, data) {
-              if (response.headers.status === '200 OK') {
+              if (response.statusCode === 200) {
                 done();
               } else {
-                done(new Error('Not Ok. ' + response.headers.status));
+                done(new Error('Not Ok. ' + response.statusCode));
               }
             }).catch(function (error) {
               if (error) throw error;
@@ -172,11 +172,11 @@ function testMethods(context, gf, timeout, cache) {
     describe('all', function() {
       it('Should return 200 OK', function(done) {
         gf.get(cache).projects().all().spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             projectID = data.projects[0].id;
             done();
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -186,10 +186,10 @@ function testMethods(context, gf, timeout, cache) {
     describe('withID', function() {
       it('Should return 200 OK', function(done) {
         gf.get(cache).projects().withID(projectID).spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             done();
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -201,10 +201,10 @@ function testMethods(context, gf, timeout, cache) {
         describe('withID', function() {
           it('Should return 200 OK', function(done) {
             gf.get(cache).projects().within().circles().withID(circleID).spread(function (response, data) {
-              if (response.headers.status === '200 OK') {
+              if (response.statusCode === 200) {
                 done();
               } else {
-                done(new Error('Not Ok. ' + response.headers.status));
+                done(new Error('Not Ok. ' + response.statusCode));
               }
             }).catch(function (error) {
               if (error) throw error;
@@ -218,12 +218,12 @@ function testMethods(context, gf, timeout, cache) {
     describe('all', function() {
       it('Should return 200 OK', function(done) {
         gf.get(cache).metrics().all().spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             metricID = data.metrics[0].id;
             metrics = data.metrics;
             done();
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -233,10 +233,10 @@ function testMethods(context, gf, timeout, cache) {
     describe('withID', function() {
       it('Should return 200 OK', function(done) {
         gf.get(cache).metrics().withID(metricID).spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             done();
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -249,10 +249,10 @@ function testMethods(context, gf, timeout, cache) {
           describe('withGlobals', function() {
             it('Should return 200 OK', function(done) {
               gf.get(cache).metrics().within().circles().withID(circleID).withGlobals().spread(function (response, data) {
-                if (response.headers.status === '200 OK') {
+                if (response.statusCode === 200) {
                   done();
                 } else {
-                  done(new Error('Not Ok. ' + response.headers.status));
+                  done(new Error('Not Ok. ' + response.statusCode));
                 }
               }).catch(function (error) {
                 if (error) throw error;
@@ -262,10 +262,10 @@ function testMethods(context, gf, timeout, cache) {
           describe('withoutGlobals', function() {
             it('Should return 200 OK', function(done) {
               gf.get(cache).metrics().within().circles().withID(circleID).withoutGlobals().spread(function (response, data) {
-                if (response.headers.status === '200 OK') {
+                if (response.statusCode === 200) {
                   done();
                 } else {
-                  done(new Error('Not Ok. ' + response.headers.status));
+                  done(new Error('Not Ok. ' + response.statusCode));
                 }
               }).catch(function (error) {
                 if (error) throw error;
@@ -278,10 +278,10 @@ function testMethods(context, gf, timeout, cache) {
     describe('globals', function() {
       it('Should return 200 OK', function(done) {
         gf.get(cache).metrics().globals().spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             done();
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -293,11 +293,11 @@ function testMethods(context, gf, timeout, cache) {
     describe('all', function() {
       it('Should return 200 OK', function(done) {
         gf.get(cache).checklistItems().all().spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             checklistItemID = data.checklist_items[0].id;
             done();
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -307,10 +307,10 @@ function testMethods(context, gf, timeout, cache) {
     describe('withID', function() {
       it('Should return 200 OK', function(done) {
         gf.get(cache).checklistItems().withID(checklistItemID).spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             done();
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -323,11 +323,11 @@ function testMethods(context, gf, timeout, cache) {
           describe('withGlobals', function() {
             it('Should return 200 OK', function(done) {
               gf.get(cache).checklistItems().within().circles().withID(circleID).withGlobals().spread(function (response, data) {
-                if (response.headers.status === '200 OK' ||
-                  response.headers.status === '404 Not Found') {
+                if (response.statusCode === 200 ||
+                  response.statusCode === 404) {
                   done();
                 } else {
-                  done(new Error('Not Ok. ' + response.headers.status));
+                  done(new Error('Not Ok. ' + response.statusCode));
                 }
               }).catch(function (error) {
                 if (error) throw error;
@@ -337,10 +337,10 @@ function testMethods(context, gf, timeout, cache) {
           describe('withoutGlobals', function() {
             it('Should return 200 OK', function(done) {
               gf.get(cache).checklistItems().within().circles().withID(circleID).withoutGlobals().spread(function (response, data) {
-                if (response.headers.status === '200 OK') {
+                if (response.statusCode === 200) {
                   done();
                 } else {
-                  done(new Error('Not Ok. ' + response.headers.status));
+                  done(new Error('Not Ok. ' + response.statusCode));
                 }
               }).catch(function (error) {
                 if (error) throw error;
@@ -353,10 +353,10 @@ function testMethods(context, gf, timeout, cache) {
     describe('globals', function() {
       it('Should return 200 OK', function(done) {
         gf.get(cache).checklistItems().globals().spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             done();
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -368,11 +368,11 @@ function testMethods(context, gf, timeout, cache) {
     describe('all', function() {
       it('Should return 200 OK', function(done) {
         gf.get(cache).actions().all().spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             actionID = data.actions[0].id;
             done();
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -382,10 +382,10 @@ function testMethods(context, gf, timeout, cache) {
     describe('withID', function() {
       it('Should return 200 OK', function(done) {
         gf.get(cache).actions().withID(actionID).spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             done();
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -397,10 +397,10 @@ function testMethods(context, gf, timeout, cache) {
         describe('withID', function() {
           it('Should return 200 OK', function(done) {
             gf.get(cache).actions().within().circles().withID(circleID).spread(function (response, data) {
-              if (response.headers.status === '200 OK') {
+              if (response.statusCode === 200) {
                 done();
               } else {
-                done(new Error('Not Ok. ' + response.headers.status));
+                done(new Error('Not Ok. ' + response.statusCode));
               }
             }).catch(function (error) {
               if (error) throw error;
@@ -412,10 +412,10 @@ function testMethods(context, gf, timeout, cache) {
         describe('withID', function() {
           it('Should return 200 OK', function(done) {
             gf.get(cache).actions().within().people().withID(personID).spread(function (response, data) {
-              if (response.headers.status === '200 OK') {
+              if (response.statusCode === 200) {
                 done();
               } else {
-                done(new Error('Not Ok. ' + response.headers.status));
+                done(new Error('Not Ok. ' + response.statusCode));
               }
             }).catch(function (error) {
               if (error) throw error;
@@ -427,10 +427,10 @@ function testMethods(context, gf, timeout, cache) {
     describe('createdSince', function() {
       it('Should return 200 OK', function(done) {
         gf.get(cache).actions().createdSince(DATE).spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             done();
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -438,15 +438,16 @@ function testMethods(context, gf, timeout, cache) {
       });
     });
   });
-  describe('triggers', function() {
+  // Not documented on https://documenter.getpostman.com/view/1014385/glassfrog-api-v3/2SJViY#intro
+  describe.skip('triggers', function() {
     describe('all', function() {
       it('Should return 200 OK', function(done) {
         gf.get(cache).triggers().all().spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             triggerID = data.triggers[0].id;
             done();
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -456,10 +457,10 @@ function testMethods(context, gf, timeout, cache) {
     describe('withID', function() {
       it('Should return 200 OK', function(done) {
         gf.get(cache).triggers().withID(triggerID).spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             done();
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -471,10 +472,10 @@ function testMethods(context, gf, timeout, cache) {
         describe('withID', function() {
           it('Should return 200 OK', function(done) {
             gf.get(cache).triggers().within().circles().withID(circleID).spread(function (response, data) {
-              if (response.headers.status === '200 OK') {
+              if (response.statusCode === 200) {
                 done();
               } else {
-                done(new Error('Not Ok. ' + response.headers.status));
+                done(new Error('Not Ok. ' + response.statusCode));
               }
             }).catch(function (error) {
               if (error) throw error;
@@ -486,10 +487,10 @@ function testMethods(context, gf, timeout, cache) {
         describe('withID', function() {
           it('Should return 200 OK', function(done) {
             gf.get(cache).triggers().within().people().withID(personID).spread(function (response, data) {
-              if (response.headers.status === '200 OK') {
+              if (response.statusCode === 200) {
                 done();
               } else {
-                done( new Error('(Not Ok. ' + response.headers.status));
+                done( new Error('(Not Ok. ' + response.statusCode));
               }
             }).catch(function (error) {
               if (error) throw error;
@@ -501,10 +502,10 @@ function testMethods(context, gf, timeout, cache) {
     describe('createdSince', function() {
       it('Should return 200 OK', function(done) {
         gf.get(cache).triggers().createdSince(DATE).spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             done();
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -527,7 +528,7 @@ describe("GET", function() {
           it('Should throw an error', function(done) {
             try {
               gf.get(true).circles().all().spread(function (response, data) {
-                done(new Error('No Error ' + response.headers.status));
+                done(new Error('No Error ' + response.statusCode));
               }).catch(function (error) {
                 if (error) done();
               });

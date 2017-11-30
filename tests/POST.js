@@ -65,13 +65,13 @@ describe('POST', function() {
   describe('people', function() {
     it('Should return 200 OK and the object', function(done) {
       gf.post().people(PERSON).spread(function (response, data) {
-        if (response.headers.status === '200 OK') {
+        if (response.statusCode === 200) {
           PERSON.id = data.people[0].id;
           done();
-        } else if (response.headers.status === '403 Forbidden') {
+        } else if (response.statusCode === 403) {
           done(new Error('Your API KEY must belong to an admin.'));
         } else {
-          done(new Error('Not Ok. ' + response.headers.status));
+          done(new Error('Not Ok. ' + response.statusCode));
         }
       }).catch(function (error) {
         if (error) throw error;
@@ -84,13 +84,13 @@ describe('POST', function() {
         PROJECT.circle_id = testCircleID,
         PROJECT.role_id = testRoleID;
         gf.post().projects(PROJECT).spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             PROJECT.id = data.projects[0].id;
             done();
-          } else if (response.headers.status === '403 Forbidden') {
+          } else if (response.statusCode === 403) {
             done(new Error('Your API KEY must belong to an admin.'));
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -106,13 +106,13 @@ describe('POST', function() {
         METRIC.circle_id = testCircleID,
         METRIC.role_id = testRoleID;
         gf.post().metrics(METRIC).spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             METRIC.id = data.metrics[0].id;
             done();
-          } else if (response.headers.status === '403 Forbidden') {
+          } else if (response.statusCode === 403) {
             done(new Error('Your API KEY must belong to an admin.'));
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -128,13 +128,13 @@ describe('POST', function() {
         CHECKLIST_ITEM.circle_id = testCircleID,
         CHECKLIST_ITEM.role_id = testRoleID;
         gf.post().checklistItems(CHECKLIST_ITEM).spread(function (response, data) {
-          if (response.headers.status === '200 OK') {
+          if (response.statusCode === 200) {
             CHECKLIST_ITEM.id = data.checklist_items[0].id;
             done();
-          } else if (response.headers.status === '403 Forbidden') {
+          } else if (response.statusCode === 403) {
             done(new Error('Your API KEY must belong to an admin.'));
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;

@@ -70,12 +70,12 @@ describe('DELETE', function() {
     describe('withID', function() {
       it('Should return 204 No Content', function(done) {
         gf.delete().people().withID(testPersonID).spread(function (response, data) {
-          if (response.headers.status === '204 No Content') {
+          if (response.statusCode === 204) {
             done();
-          } else if (response.headers.status === '403 Forbidden') {
+          } else if (response.statusCode === 403) {
             done(new Error('Your API KEY must belong to an admin.'));
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -87,12 +87,12 @@ describe('DELETE', function() {
     describe('withID', function() {
       it('Should return 204 No Content', function(done) {
         gf.delete().projects().withID(testProjectID).spread(function (response, data) {
-          if (response.headers.status === '204 No Content') {
+          if (response.statusCode === 204) {
             done();
-          } else if (response.headers.status === '403 Forbidden') {
+          } else if (response.statusCode === 403) {
             done(new Error('Your API KEY must belong to an admin.'));
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -104,12 +104,12 @@ describe('DELETE', function() {
     describe('withID', function() {
       it('Should return 204 No Content', function(done) {
         gf.delete().metrics().withID(testMetricID).spread(function (response, data) {
-          if (response.headers.status === '204 No Content') {
+          if (response.statusCode === 204) {
             done();
-          } else if (response.headers.status === '403 Forbidden') {
+          } else if (response.statusCode === 403) {
             done(new Error('Your API KEY must belong to an admin.'));
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
@@ -121,12 +121,12 @@ describe('DELETE', function() {
     describe('withID', function() {
       it('Should return 204 No Content', function(done) {
         gf.delete().checklistItems().withID(testChecklistItemID).spread(function (response, data) {
-          if (response.headers.status === '204 No Content') {
+          if (response.statusCode === 204) {
             done();
-          } else if (response.headers.status === '403 Forbidden') {
+          } else if (response.statusCode === 403) {
             done(new Error('Your API KEY must belong to an admin.'));
           } else {
-            done(new Error('Not Ok. ' + response.headers.status));
+            done(new Error('Not Ok. ' + response.statusCode));
           }
         }).catch(function (error) {
           if (error) throw error;
