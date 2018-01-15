@@ -36,7 +36,7 @@ var gf = GlassFrog(YOUR_API_KEY, {
 You may also specify the `caching` flag. If set to `true`
 fetched API data will be stored locally. The `get()` method (documented
 below) allows you to specify if you want to attempt to retrieve data
-instantaneously from the local cache or from the GlassFrog server.
+instantaneously from the local cache or from the GlassFrog® server.
 
 The cache can dramatically speed up some of the organizational graph
 traversal methods.
@@ -89,29 +89,29 @@ gf.get().circles().withID($ID).spread(function (response, data) {
 });
 ```
 Note that `data` will automatically be parsed into an object for you if
-the call to the GlassFrog API was successful
+the call to the GlassFrog® API was successful
 
 ## GET
 
-These functions pull data from GlassFrog with GET HTTP requests.
+These functions pull data from GlassFrog® with GET HTTP requests.
 
 See [get documentation](docs/GET.md).
 
 ## POST
 
-These functions push data to GlassFrog and create new objects with POST HTTP requests.
+These functions push data to GlassFrog® and create new objects with POST HTTP requests.
 
 See [post documentation](docs/POST.md).
 
 ## PATCH
 
-These functions modify existing data on GlassFrog with PATCH HTTP requests.
+These functions modify existing data on GlassFrog® with PATCH HTTP requests.
 
 See [patch documentation](docs/PATCH.md).
 
 ## DELETE
 
-These functions delete existing data on GlassFrog with DELETE HTTP requests.
+These functions delete existing data on GlassFrog® with DELETE HTTP requests.
 
 See [delete documentation](docs/DELETE.md).
 
@@ -123,6 +123,9 @@ This software has been authored in part by:
    * Jordan Husney <jordan.husney@quirkyinc.com>
 
 ## License
+
+GlassFrog® is a registered trademark of HolacracyOne, LLC.
+This product uses the GlassFrog API but is not endorsed, certified, or otherwise approved by GlassFrog/HolacracyOne.
 
 Copyright 2015 [Undercurrent](http://www.undercurrent.com)
 
